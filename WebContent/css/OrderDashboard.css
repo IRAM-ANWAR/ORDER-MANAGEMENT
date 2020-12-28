@@ -1,0 +1,383 @@
+		/*WINDOW*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*HTML,BODY*/
+html,body{
+    margin:0;
+    height:100%;
+    overflow:hidden;
+}
+
+/*THE COMPLETE PAGE*/
+.mainclass{
+	width:100%;
+	height:100%;
+	background-color:white;
+}
+
+/**HEADER*/
+.header{
+    width: 100%;
+    height: 70px;
+    display: block;
+    background-color: white;
+    justify-content: space-around;
+}
+	
+	.popup,.popup-edit{
+		background:rgba(0,0,0,0.3);
+		width:100%;
+		height:100%;
+		position: fixed;
+		top:0;
+		left:0;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+	}
+	.popup-content,.popup-content-edit{
+		height: 400px;
+		width:600px;
+		background:#fff;
+		padding: 20px;
+		border-radius: 6px;
+		position: relative;
+		font-family:"Century Gothic";
+	}
+	.popup-content form,.popup-content-edit form{
+		align:center;
+		position: fixed;
+		width:500px;
+		padding:20px;
+		top:175px;
+		left:30%;
+		font-weight:bold;
+		font-size:10px;
+		font-family:"Century Gothic";
+		margin:10px;
+	}
+	.close_add_button,.close-edit-button{
+		position: absolute;
+		top:10px;
+		font-weight:bold;
+		right:14px;
+		font-size: 1.25rem;
+		cursor: pointer;
+		border:none;
+		outline:none;
+		background:light-grey;
+		height:30px;
+		width:30px;
+	}
+	.close,.close-edit{
+		position: absolute;
+		top:0;
+		height:40px;
+		width:40px;
+		font-weight:bold;
+		right:14px;
+		font-size: 1.4rem;
+		cursor: pointer;
+		border:none;
+		outline:none;
+		background:none;
+		
+	}
+	.popup-content h3,.popup-content-edit h3{
+		margin:0;
+		text-align: left;
+		padding-bottom: 7px;
+		position: relative;
+		border-bottom:2px solid #ccc;
+	}
+	.popup-content h3:before,.popup-content-edit h3:before{
+		position: absolute;
+		background:orange;
+		height:3px;
+		content: "";
+		width:150px;
+		bottom: -2px;
+		left:0;
+	}
+	
+	.popup-content label,.popup-content-edit label{
+		display: inline-block;
+		width:150px;
+	}
+	.popup-content input[type=text],.popup-content-edit input[type=text]{
+		display: inline-block;
+		border:none;
+		border-bottom: 2px solid #D3D3D3;
+	}
+	.popup-content input[type=button],.popup-content-edit input[type=button]
+	{
+		width:120px;
+		height:40px;
+		background:darkorange;
+		border-radius:6px;
+		color: white;
+		border-color: white;
+		font-size: 20px;
+		position: absolute;
+		left:175px;
+	}
+
+/*HRC-LOGO*/
+.hrclogo{
+    width: 40%;
+    height: 60px;
+    margin-top: 5px;
+    margin-left: 5px;
+    background-image: url('../images/hrc-logo.svg');
+    float:left;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+/**ABC-PRODUCTS**/
+.abcimage{
+    width: 150%;
+    height: 80px;
+    margin-top:0px;
+    left: 5%;
+    float:center;
+    transform: scale(0.5);
+    background-image: url('../images/abc-logo.png');
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+
+/***GREY BACKGROUND**/
+.tableborder{
+    position: relative;
+    width: 99%;
+    height: 100%;
+    background-color: grey;
+    margin: 6px;
+}
+
+/**TABLE+PAGINATION---WHITE BACKGROUND**/
+.tablelayout{
+    position: relative;
+    width: 98%;
+    height: 85%;
+    top: 5px;
+    font-size:small;
+    background-color:white;
+    margin: 12px;
+    border-radius: 1px;
+    border:2px solid grey;
+    border-width:6px;
+}
+
+/**TABLE**/
+.tableboard{
+	position: relative;
+	width:98%;
+	height:50%;
+	margin:7px;
+	border-collapse:collapse;
+}
+
+/**TABLE HOVER**/
+.tableboard tr:not(:first-child):hover{
+	background-color:#ffdab9;
+	cursor:pointer;
+	transition: all .25s ease-in-out;
+}
+
+
+.pagination{
+	position:relative;
+	width: 98%;
+	height: 10%;
+	margin:7px;
+    background-color:white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    bottom:8px;
+}
+
+.pagination section{
+	width: 30%;
+	height: 70%;
+	margin: 10px;
+	display:flex;
+	flex:1;
+	bottom:1px;
+}
+
+.pagination section div{
+	width: 40px;
+	height: 30px;
+	
+}
+
+.pagination next div{
+	flex:3;
+	margin:4px;
+}
+
+.pagination section div button{
+	background-color: #EFF9FD;
+	width:25px;
+	height:25px;
+	color:blue;
+	border:none;
+}
+#pageno{
+background-color: #EFF9FD;
+	width:25px;
+	height:25px;
+	
+	align-items:center;
+	padding:3px;
+	}
+.pagex{
+
+	width:30px;
+	height:25px;
+	align-items:center;
+	padding:4px;
+	}
+
+
+.AddEditSearch{
+   position: relative;
+	width: 98%;
+	height: 70px;
+	background-color: white;
+	margin: 7px;
+	top: 0px;
+    
+}
+#alertbox{
+	display:none;
+position: relative;
+text-align:center;
+color:grey;
+font-size:20px;
+font-weight:italic;
+ left:30%;
+ width: 40%;
+ bottom:40px;
+ height: 50px;
+ }
+.addedit{
+	height: 65%;
+	width:35%;
+    padding: 4px;
+}
+.colname{
+	width: 100%;
+	border-bottom: 2px solid orange;
+}
+.addedit button{
+    margin-top: 20px;
+    width: 110px;
+    height: 25px;
+    font-size: 1em;
+    font-weight:bold;
+    color:white;
+    border: none;
+    border-radius: 5px;
+    background-color: #fc7500;
+}
+.addedit button:disabled{
+	margin-top: 20px;
+    width: 110px;
+    height: 25px;
+    font-size: 1em;
+    font-weight:bold;
+    color:white;
+    border: none;
+    border-radius: 5px;
+    background-color:#FFE4B5;
+}
+table{
+    column-width:100px;
+}
+
+.tableboard tr th{
+    border-bottom:3px solid #FC7500;
+    border-spacing: 0px;
+    text-align: left;
+    padding:5px;
+    font-family:"Century Gothic";
+    font-size:12px;
+    font-weight:normal;
+}
+.tableboard tr td{
+
+    font-family:"Roboto";
+    font-size:12px;
+    font-weight:normal;
+}
+th{
+    
+    border-spacing: 1px;
+    text-align: left;
+    padding:5px;
+}
+
+tr:nth-child(odd):not(:first-child){
+    background-color: #EFF9FD;
+}
+tr:nth-child(odd):not(:first-child):hover{
+    background-color: #ffdab9;
+    transition: all .25s ease-in-out;
+    
+}
+#form-messages{
+	background-color:rgb(255,232,232);
+	border:1px solid red;
+	color:red;
+	display:none;
+	font-size:12px;
+	font-weight:bold;
+	margin-bottom:10px;
+	padding:10px 25px;
+	max-width:450px;
+}
+input,textarea,select{
+    outline: none;
+}
+.searchhere{
+	position: absolute;
+	width: 17%;
+	height: 30px;
+	left: 80%;
+	bottom: 1px;
+	margin: 30px;
+    
+}
+
+.search-icon{
+    background-color: #EFF9FD;
+    border:none;
+}
+.searchbox td input{
+     background-color: #EFF9FD;
+}
+
+.space{
+	height:2px;
+}
+.search{
+    border: none;
+    height: 30px;
+    border-radius: 5px;
+    background-color: rgb(70, 70, 87);
+}
+.selected{background-color:red;color:#fff;font-weight:bold;}
+	
+input[type=checkbox]{
+	background:orange;
+	border:orange;
+}

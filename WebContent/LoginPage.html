@@ -1,0 +1,84 @@
+<!-- THIS IS THE LOGIN PAGE -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>LOGIN</title>
+	<link rel="stylesheet" type="text/css" href="./css/LoginPage.css">
+	<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+</head>
+<body>
+		<div class="container">
+                	<!-- LOGO OF HIGHRADIUS -->
+                	<div class="hrclogo"></div>
+                	<div class="order">
+                   		 <h1>ORDER MANAGEMENT APPLICATION</h1>
+               		</div>
+               		
+               		<!-- SIGN IN FORM -->
+               			<div class="sign">
+               					<div class="signheader">Sign in<br></div>
+               					<div class="space3"></div>
+                    			<div class="space1" id="form-messages"></div>
+                    			<form id="signinform" name="signinform">
+                       					<label>Username</label><input type="text" id="username" name="username" spellcheck=false>
+                        				<div class="space3"></div>
+                        				<label>Password</label><input type="password" id="password" name="password">
+                        				<div class="space3"></div>
+                				</form>
+                				<div class="space3"></div>
+                				<button type="button" class="signIn" onclick="login()">Sign In</button> 
+            			</div>
+           
+		</div>
+					
+		<!-- JAVASCRIPT+JQUERY -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      	 <script>
+      	 	var msg=null;
+       	
+       	//CALL TO LOGIN-SERVLET AND FORM VALIDATION
+       	function login()
+       	{
+       		//IF USERNAME FIELD IS BLANK
+       		if($('#username').val()=="")
+       		{
+       			$("#form-messages").text("USERNAME CANNOT BE BLANK").show().fadeOut(5000);
+       		}
+       		//IF PASSWORD FIELD IS BLANK
+       		else if($('#password').val()=="")
+       		{
+       			$("#form-messages").text("PASSWORD CANNOT BE BLANK").show().fadeOut(5000);
+       		}
+       		
+       		
+       		else{
+       			var data=$("#signinform").serialize();
+       		
+       			$.ajax({
+       				type:'POST',
+       				url:'LoginServlet',
+       				data:data,
+       				dataType:'JSON',
+       			
+      				success:function(data)
+       				{
+       					msg=data.msg
+       					
+       					//IF LOGIN SUCCESSFULL
+       					if(msg==1)
+       					{
+       						window.location.replace("OrderDashboard.jsp");
+       					}
+       					
+       					//IF LOGIN UNSUCCESSFULL
+       					else if(msg==3)
+       					{
+       						$("#form-messages").text("USERNAME OR PASSWORD DO NOT MATCH").show().fadeOut(10000);
+       					}
+       				}
+       			})}}
+
+      	 </script>
+</body>
+</html>
